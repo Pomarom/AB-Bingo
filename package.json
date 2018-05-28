@@ -1,0 +1,11 @@
+{
+    "name": "ab-bingo",
+    "version": "0.0.1",
+    "description": "The AB Bingo !",
+    "main": "index.js",
+    "author": "Pomarom",
+    "license": "MIT",
+    "dependencies": {
+        "dom-to-image": "^2.6.0"
+    }
+}

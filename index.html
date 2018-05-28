@@ -1,0 +1,132 @@
+<html id="AB">
+<a href="https://github.com/Pomarom/AB-Bingo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+<div class="mainTitle" onclick="downloadImage()">Ababou Bingo</div>
+<div class="container">
+    <div class="item" onclick="toggle(this)">Spelling / grammatical error</div>
+    <div class="item" onclick="toggle(this)">
+        <div>Infinity</div>
+    </div>
+    <div class="item" onclick="toggle(this)">Word equation</div>
+    <div class="item" onclick="toggle(this)">Arithmetic</div>
+    <div class="item" onclick="toggle(this)">Assertion without arguments</div>
+</div>
+<div class="container">
+    <div class="item" onclick="toggle(this)">Counting</div>
+    <div class="item" onclick="toggle(this)">Shitty JPGmade with MS Paint</div>
+    <div class="item" onclick="toggle(this)">Rhetorical question</div>
+    <div class="item" onclick="toggle(this)">Numbers have an end</div>
+    <div class="item" onclick="toggle(this)">Weird diagram</div>
+</div>
+<div class="container">
+    <div class="item" onclick="toggle(this)">Theory</div>
+    <div class="item" onclick="toggle(this)">Criticism of mathematics</div>
+    <div class="item" onclick="toggle(this)">Signs his name (Free space)</div>
+    <div class="item" onclick="toggle(this)">Non sequitur</div>
+    <div class="item" onclick="toggle(this)">Truth</div>
+</div>
+<div class="container">
+    <div class="item" onclick="toggle(this)">Reference to religion</div>
+    <div class="item" onclick="toggle(this)">Revolution / Renaissance</div>
+    <div class="item" onclick="toggle(this)">Time</div>
+    <div class="item" onclick="toggle(this)">Fundamental misunderstanding of maths/numbers</div>
+    <div class="item" onclick="toggle(this)">Logical fallacy</div>
+</div>
+<div class="container">
+    <div class="item" onclick="toggle(this)">Science</div>
+    <div class="item" onclick="toggle(this)">Call to action</div>
+    <div class="item" onclick="toggle(this)">Big ego</div>
+    <div class="item" onclick="toggle(this)">Big words</div>
+    <div class="item" onclick="toggle(this)">Literal nonsense</div>
+</div>
+<div class="btnContainer">
+    <button class="button" onclick="downloadImage()">Download 🆎</button>
+</div>
+
+</html>
+<script>
+    console.log("salam");
+
+    window.toggle = (div) => {
+        div.className.indexOf('red') !== -1 ? div.className = "item" : div.className = "item red";
+        console.log(div.className);
+    }
+
+    window.downloadImage = () => {
+        console.log("oui");
+        const node = document.getElementById('AB');
+        domtoimage.toPng(node)
+            .then(function (dataUrl) {
+                const img = new Image();
+                img.src = dataUrl;
+                var url = img.src.replace(/^data:image\/[^;]+/, 'data:application/octet-stream');
+                window.open(url);
+            })
+            .catch(function (error) {
+                console.error('oops, something went wrong!', error);
+            });
+    }
+
+</script>
+<script src="node_modules/dom-to-image/dist/dom-to-image.min.js"></script>
+<style>
+    html {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        background-color: #96FACC;
+    }
+
+    .mainTitle {
+        display: flex;
+        /* or inline-flex */
+        justify-content: center;
+        font-size: 7vw;
+        ;
+    }
+
+    .button {
+        display: flex;
+        /* or inline-flex */
+        justify-content: center;
+    }
+
+    .btnContainer {
+        padding-top: 10px;
+        display: flex;
+        /* or inline-flex */
+        justify-content: center;
+    }
+
+    .container {
+        display: flex;
+        /* or inline-flex */
+        height: 8vw;
+        justify-content: center;
+    }
+
+    .item {
+        flex-grow: 0;
+        /* do not grow   - initial value: 0 */
+        /* default 0 */
+        background-color: #64BCF8;
+        border: 2px solid black;
+        width: 10vw;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .item:hover {
+        cursor: pointer;
+    }
+
+    .red {
+        background-color: red;
+    }
+
+    .button {
+        background-color: #64BCF8;
+        display: flex;
+        /* or inline-flex */
+        justify-content: center;
+    }
+</style>
