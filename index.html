@@ -2,7 +2,7 @@
 <a href="https://github.com/Pomarom/AB-Bingo">
     <img style="position: absolute; top: 0; right: 0; border: 0;" src="forkme.png" alt="Fork me on GitHub">
 </a>
-<div class="mainTitle" onclick="downloadImage()">Ababou Bingo</div>
+<div class="mainTitle">Ababou Bingo</div>
 <div class="container">
     <div class="item" onclick="toggle(this)">Spelling / grammatical error</div>
     <div class="item" onclick="toggle(this)">
@@ -46,15 +46,11 @@
 
 </html>
 <script>
-    console.log("salam");
-
     window.toggle = (div) => {
         div.className.indexOf('red') !== -1 ? div.className = "item" : div.className = "item red";
-        console.log(div.className);
     }
 
     window.downloadImage = () => {
-        console.log("oui");
         const node = document.getElementById('AB');
         domtoimage.toPng(node)
             .then(function (dataUrl) {
